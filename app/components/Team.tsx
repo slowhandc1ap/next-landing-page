@@ -7,6 +7,7 @@ const teamMembers = [
   {
     name: "Korn",
     position: "Software Developer",
+    companyPosition: "Founder", // เพิ่มตำแหน่งในบริษัท
     github: "https://github.com/slowhandc1ap",
     facebook: "https://facebook.com/KornDev",
     image: "/korn-profile.png",
@@ -14,6 +15,7 @@ const teamMembers = [
   {
     name: "Pooh",
     position: "Frontend Engineer",
+    companyPosition: "Co-Founder", // เพิ่มตำแหน่งในบริษัท
     github: "https://github.com/AliceDev",
     facebook: "https://facebook.com/AliceDev",
     image: "/pooh-profile.jpg",
@@ -21,6 +23,7 @@ const teamMembers = [
   {
     name: "Green",
     position: "Backend Engineer",
+    companyPosition: "Co-Founder", // เพิ่มตำแหน่งในบริษัท
     github: "https://github.com/BobBackend",
     facebook: "https://facebook.com/BobBackend",
     image: "/green-profile.jpg",
@@ -28,6 +31,7 @@ const teamMembers = [
   {
     name: "Field",
     position: "Tester Engineer",
+    companyPosition: "Co-Founder", // เพิ่มตำแหน่งในบริษัท
     github: "https://github.com/CharlieSec",
     facebook: "https://facebook.com/CharlieSec",
     image: "/few-profile.jpg",
@@ -59,7 +63,7 @@ const Team = () => {
   return (
     <section
       id="Team"
-      className="relative h-screen flex flex-col items-center justify-center text-center bg-gradient-to-r from-black via-gray-800 to-gray-900 text-white space-y-8 px-10"
+      className="relative min-h-screen flex flex-col items-center justify-center text-center  text-white space-y-8 px-10"
     >
       {/* หัวข้อ */}
       <motion.h2
@@ -78,7 +82,7 @@ const Team = () => {
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={index}
-              className="absolute flex flex-col items-center justify-center w-72 h-80 rounded-2xl bg-gray-800 shadow-xl text-center p-6"
+              className="absolute flex flex-col items-center justify-center w-72 h-80 rounded-2xl bg-gray-800 shadow-xl text-center p-6 z-10"
               initial={{ x: direction * 300, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: -direction * 300, opacity: 0 }}
@@ -100,6 +104,9 @@ const Team = () => {
               />
               <h3 className="text-2xl font-bold mt-4">{teamMembers[index].name}</h3>
               <p className="text-lg text-gray-400">{teamMembers[index].position}</p>
+              
+              {/* แสดงตำแหน่งในบริษัท */}
+              <p className="text-sm text-yellow-400 mt-2">{teamMembers[index].companyPosition}</p>
 
               {/* Social Icons */}
               <div className="flex space-x-4 mt-3">
@@ -134,6 +141,9 @@ const Team = () => {
           ))}
         </div>
       </div>
+
+      {/* เพิ่ม blur overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 opacity-30 blur-lg"></div>
     </section>
   );
 };

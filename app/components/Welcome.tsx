@@ -5,7 +5,7 @@ const Welcome = () => {
   return (
     <section
       id="welcome"
-      className="relative flex flex-col items-center justify-center h-screen text-center px-6 bg-gradient-to-r from-black via-gray-800 to-gray-900"
+      className="relative flex flex-col items-center justify-center h-screen text-center px-6 "
     >
       {/* แสดงหัวข้อหลักที่มีการเคลื่อนไหว */}
       <motion.h1

@@ -6,7 +6,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative flex flex-col items-center justify-center h-screen text-center px-10 bg-gradient-to-r from-black via-gray-800 to-gray-900  space-y-10 overflow-hidden"
+      className="relative flex flex-col items-center justify-center h-screen text-center px-10   space-y-10 overflow-hidden"
     >
       {/* Title with animation */}
       <motion.h2
@@ -58,6 +58,9 @@ const About = () => {
             { src: "/flask-logo.png", alt: "Flask" },
             { src: "/SQL_logo.png", alt: "SQL" },
             { src: "/PGSQL_logo.png", alt: "PostgreSQL" },
+            { src: "/Figma-logo.png", alt: "PostgreSQL" },
+            { src: "/canva-logo.png", alt: "PostgreSQL" },
+            { src: "/Powerpoint-logo.png", alt: "PostgreSQL" },
           ].map((logo, index) => (
             <motion.div
               key={index}
@@ -71,7 +74,7 @@ const About = () => {
       </div>
 
       {/* Blur Background Overlay for Cool Effect */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 opacity-30 blur-lg"></div>
+      <div className="absolute inset-0 bg-transparent blur-lg"></div>
     </section>
   );
 };

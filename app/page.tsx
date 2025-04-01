@@ -5,12 +5,12 @@ import Contact from "./components/Contact";
 import Services from "./components/Services";
 import Team from "./components/Team";
 import Projects from "./components/Project";
-
+import Footer from "./components/Footer";
 
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-gradient-to-r from-black via-gray-800 to-gray-900">
       <Navbar />
       <Welcome />
       <About />
@@ -18,6 +18,7 @@ const Home = () => {
       <Services />
       <Projects />
       <Contact />
+      <Footer/>
     </div>
   );
 };
