@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const sectionIds = ["welcome", "about", "Team", "services", "projects", "contact"];
+const sectionIds = ["welcome", "about", "services","Team",  "projects", "contact"];
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);

@@ -1,7 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from 'next/image'
+
 const Welcome = () => {
+  // ฟังก์ชันสำหรับเลื่อนไปยัง Section ที่ต้องการ
+  const scrollToSection = (id:any) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section
       id="welcome"
@@ -15,13 +20,13 @@ const Welcome = () => {
         transition={{ duration: 1.2 }}  // ใช้เวลา 1.2 วินาทีในการทำให้เต็มที่
       >
         Cook
-       <span className="text-6xl  text-white bg-transparent ">🍳</span>
-        Code {/* แทนที่อิโมจิด้วยรูป PNG */}
+       <span className="text-6xl text-white bg-transparent">🍳</span>
+        Code 
       </motion.h1>
 
       {/* ข้อความที่อธิบายเพิ่มเติม */}
       <motion.p
-        className="text-lg text-gray-300 mt-6"
+        className="text-lg text-red-500 mt-6"
         initial={{ opacity: 0, x: -50 }}  // เริ่มต้นจากด้านซ้ายและความทึบ
         animate={{ opacity: 1, x: 0 }}   // ขยับมาที่ตำแหน่งเดิมและโปร่งใส
         transition={{ duration: 1, delay: 0.4 }} // ใช้เวลา 1 วินาทีและดีเลย์ 0.4 วินาที
@@ -29,12 +34,13 @@ const Welcome = () => {
         Hi, we Cook the Perfect Code for You!
       </motion.p>
 
-      {/* ปุ่มกด */}
+      {/* ปุ่มกดเพื่อเลื่อนไปยัง Section Services */}
       <motion.button
         className="mt-8 px-8 py-4 bg-transparent border-2 border-yellow-400 rounded-full text-lg text-yellow-400 font-semibold shadow-xl hover:bg-yellow-400 hover:text-gray-900 transition-all duration-300"
         initial={{ scale: 0.8 }}  // เริ่มต้นจากขนาดเล็ก
         animate={{ scale: 1 }}   // ขยายจนเต็มขนาด
         transition={{ duration: 0.6, delay: 0.6 }} // ใช้เวลา 0.6 วินาทีและดีเลย์ 0.6 วินาที
+        onClick={() => scrollToSection("services")} // เมื่อกดปุ่มให้เลื่อนไปยัง Section "services"
       >
         Let's Cook Together!
       </motion.button>
